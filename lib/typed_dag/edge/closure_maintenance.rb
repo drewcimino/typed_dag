@@ -11,7 +11,7 @@ module TypedDag::Edge
       private
 
       def set_count
-        send("#{_dag_options.count_column}=", 1) if send(_dag_options.count_column).zero?
+        send("#{_dag_options.count_column}=", 1) if send(_dag_options.count_column).to_i.zero?
       end
 
       def add_closures
